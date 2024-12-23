@@ -1,0 +1,11 @@
+.progressBar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    .percent {
+        width: 38px;
+        text-align: right;
+    }
+}

@@ -1,0 +1,12 @@
+.content {
+    margin: 0 10px;
+.possibleActionsList {
+    margin: 0;
+    padding-left: 22px;
+   
+
+    li:empty {
+        display: none;
+        }
+    }
+}
