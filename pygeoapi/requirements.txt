@@ -17,4 +17,5 @@ requests
 shapely
 SQLAlchemy
 tinydb
-dokanalyse==0.0.4
+#dokanalyse==0.0.4
+dokanalyse @ file:///home/toranders/dev/dok.arealanalyse.process

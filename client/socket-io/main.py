@@ -45,6 +45,11 @@ async def dataset_analyzed(_, data):
     await sio.emit('dataset_analyzed', data['dataset'], data['recipient'])
 
 
+@sio.on('create_fact_sheet_api')
+async def create_fact_sheet(_, data):
+    await sio.emit('create_fact_sheet', None, data['recipient'])
+
+
 if __name__ == '__main__':
     multiprocessing.freeze_support()
     uvicorn.run('main:app', host='127.0.0.1', port=5002, reload=True)

@@ -5,7 +5,7 @@ import { resetProgress } from 'store/slices/datasetSlice';
 import { useMap } from 'context/MapContext';
 import { analyze } from 'utils/api';
 import { createRandomId } from 'utils/helpers';
-import { Form, ResultDialog, ResultList } from 'features';
+import { FactSheet, Form, ResultDialog, ResultList } from 'features';
 import { Heading, ProgressBar, Toaster } from 'components';
 import groupBy from 'lodash.groupby';
 import useSocketIO from 'hooks/useSocketIO';
@@ -18,6 +18,7 @@ export default function App() {
     const [fetching, setFetching] = useState(false);
     const dispatch = useDispatch();
     const correlationId = useSelector(state => state.app.correlationId);
+    const status = useSelector(state => state.dataset.status);
     const { clearCache } = useMap();
 
     function resetState() {
@@ -39,7 +40,7 @@ export default function App() {
             } else {
                 const { resultList } = response;
                 resultList.forEach(result => result._tempId = createRandomId());
-                
+
                 const grouped = groupBy(resultList, result => result.resultStatus);
 
                 setData({ ...response, resultList: grouped });
@@ -59,11 +60,24 @@ export default function App() {
             <div className={styles.content}>
                 <Form onSubmit={start} fetching={fetching} />
                 {
-                    fetching && <ProgressBar />
+                    fetching && (
+                        <div className={styles.progress}>
+                            <span className={styles.status}>{status}</span>
+                            <ProgressBar />
+                        </div>
+                    )
                 }
                 {
                     data !== null && (
                         <>
+                            <FactSheet
+                                inputGeometryArea={data.inputGeometryArea}
+                                municipalityNumber={data.municipalityNumber}
+                                municipalityName={data.municipalityName}
+                                rasterResult={data.factSheetRasterResult?.imageUri}
+                                cartography={data.factSheetCartography}
+                                factList={data.factList}
+                            />
                             <ResultList data={data} />
                             <ResultDialog inputGeometry={data.inputGeometry} />
                         </>
