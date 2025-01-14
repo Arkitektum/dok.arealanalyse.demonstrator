@@ -118,8 +118,7 @@ function createFeaturesLayer(features, styling) {
     });
 
     if (styling) {
-        const style = createStyleObject(styling);
-        vectorLayer.setStyle(style);
+        vectorLayer.setStyle(styling);
     }
 
     return vectorLayer;
@@ -210,15 +209,4 @@ function getEpsgCode(crsName) {
 
 function getCrsName(geoJson) {
     return geoJson?.crs?.properties?.name;
-}
-
-function createStyleObject(styling) {
-    const styleObject = {};
-
-    Object.entries(styling)
-        .forEach(entry => {
-            styleObject[entry[0]] = isNaN(entry[1]) ? entry[1] : parseFloat(entry[1]);
-        });
-
-    return styleObject;
 }
