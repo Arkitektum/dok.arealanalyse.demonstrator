@@ -174,7 +174,7 @@ export default function Form({ fetching, onSubmit }) {
                                         onChange={handleChange}
                                     />
                                 }
-                                label="Inkluder faktaark" />
+                                label="Inkluder faktainformasjon" />
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@ export default function Form({ fetching, onSubmit }) {
                         <Button
                             onClick={handleSubmit}
                             variant="contained"
-                            //disabled={!canSubmit()}
+                            disabled={!canSubmit()}
                         >
                             Start DOK-analyse
                         </Button>

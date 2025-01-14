@@ -16,8 +16,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         'https://dok-arealanalyse-api.azurewebsites.net',
-        'http://localhost:5000',
-        'http://localhost:5173'
+        'http://localhost:5173',
+        'http://localhost:5000',        
+        'http://localhost'
     ],
     allow_methods=['GET', 'POST'],
     allow_headers=['*'],
@@ -52,4 +53,4 @@ async def create_fact_sheet(_, data):
 
 if __name__ == '__main__':
     multiprocessing.freeze_support()
-    uvicorn.run('main:app', host='127.0.0.1', port=5002, reload=True)
+    uvicorn.run('main:app', host='0.0.0.0', port=5002, reload=True)

@@ -56,5 +56,6 @@ export const chartOptions = {
             }
         }
     },
-    locale: 'nb-NO'
+    locale: 'nb-NO',
+    maintainAspectRatio: false
 };

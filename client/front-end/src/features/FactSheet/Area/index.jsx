@@ -56,7 +56,7 @@ export default function Area({ factPart }) {
 
                 <div className={styles.chartContainer}>
                     <div className={styles.chart}>
-                        <Pie data={chartData} options={chartOptions} width={396} height={396} />
+                        <Pie data={chartData} options={chartOptions} />
                     </div>
 
                     <ul className={styles.labels}>

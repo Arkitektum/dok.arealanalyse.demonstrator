@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Bar } from 'react-chartjs-2';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Paper, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import { inPlaceSort } from 'fast-sort';
 import { getChartData, chartOptions } from './helpers';
 import styles from './Roads.module.scss';

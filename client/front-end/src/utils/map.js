@@ -141,8 +141,7 @@ function createFeature(geoJson, projection) {
     feature.setStyle(new Style({
         stroke: new Stroke({
             color: '#d33333',
-            lineDash: [8, 8],
-            width: 2
+            width: 4
         })
     }));
 

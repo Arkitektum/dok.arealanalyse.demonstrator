@@ -46,7 +46,7 @@ export default function FactSheet({ inputGeometryArea, municipalityNumber, munic
                     variant="contained"
                     startIcon={<InfoIcon />}
                 >
-                    Vis faktaark
+                    Vis faktainformasjon
                 </Button>
             </div>
 
@@ -61,7 +61,7 @@ export default function FactSheet({ inputGeometryArea, municipalityNumber, munic
                 }}
                 onClose={() => setModalOpen(false)}
             >
-                <DialogTitle>Faktaark</DialogTitle>
+                <DialogTitle>Faktainformasjon</DialogTitle>
 
                 <IconButton
                     aria-label="Lukk"

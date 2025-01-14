@@ -24,11 +24,9 @@
     gap: 24px;
     width: 67%;
 
-    canvas {
-        width: 100% !important;
-        min-width: 252px;
-        max-width: 396px;
-        height: 100% !important;
+    .chart {
+        height:360px; 
+        width:360px;
     }
 }
 
